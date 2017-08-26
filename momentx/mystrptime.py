@@ -29,4 +29,3 @@ def mystrptime(value, fmt='%Y-%m-%d %H:%M:%S%z'):
         return OffsetTime(offset).localize(datetime.datetime.strptime(value, fmt)).astimezone(pytz.utc).replace(tzinfo=None)
 
     return datetime.datetime.strptime(value, fmt)
-

@@ -35,4 +35,3 @@ class MomentXWrapper(object):
     def utcnow(self): # pylint:disable=no-self-use
         """UTC equivalent to `now` function."""
         return MomentX(*self.args_now, timezone="UTC")
-

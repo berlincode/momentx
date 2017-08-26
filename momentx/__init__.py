@@ -4,14 +4,15 @@ MomentX
 """
 
 __author__ = "Ulf Bartel <elastic.code@gmail.com>"
-__version__ = "0.1.4"
+__version__ = "0.2.0"
 __copyright__ = "Copyright (c) Ulf Bartel / Zach Williams"
 __license__ = "New-style BSD"
 __url__ = "https://github.com/berlincode/momentx"
 
-import os, pytz
+import os
 from datetime import datetime
 
+import pytz
 from .date import add, replace
 from .core import parse_date, get_timezone
 

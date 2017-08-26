@@ -12,8 +12,7 @@ except ImportError:
 
 if sys.argv[-1] == 'publish':
     os.system('pandoc -o README.rst README.md')
-    os.system('python setup.py sdist')
-#     os.system('python setup.py sdist upload')
+    os.system('python setup.py sdist upload')
     sys.exit()
 
 README = open('README.md').read()
@@ -21,7 +20,7 @@ HISTORY = open('CHANGES.txt').read().replace('.. :changelog:', '')
 
 setup(
     name='momentx',
-    version='0.1.0',
+    version='0.2.0',
     description="""
 A lightweight wrapper around datetime with a focus on timezone handling and
 few dependencies (only pytz and six).
@@ -36,7 +35,7 @@ few dependencies (only pytz and six).
     package_dir={'momentx': 'momentx'},
     include_package_data=True,
     install_requires=['pytz', 'six'], # python already ships datetime and calendar
-    license="new-style BS",
+    license="new-style BSD",
     zip_safe=False,
     keywords='datetime, timezone, wrapper, pytz, simple, moment',
     entry_points={
@@ -46,5 +45,5 @@ few dependencies (only pytz and six).
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
     ],
-    #test_suite='tests',
+    test_suite='tests',
 )

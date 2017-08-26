@@ -1,7 +1,8 @@
 # -*- encoding: utf-8 -*-
 import calendar
-import pytz
 from datetime import timedelta
+
+import pytz
 from six import iteritems
 
 def add_month(date, number):
@@ -11,7 +12,7 @@ def add_month(date, number):
 
 def update_month(date, month):
     """Create a new date with a modified number of months."""
-    year = date.year + month / 12
+    year = date.year + month // 12
     month = month % 12 + 1
     day = min(date.day, calendar.monthrange(year, month)[1])
     return date.replace(year=year, month=month, day=day)
@@ -85,4 +86,3 @@ def replace(date, **kwds):
             delta = date - timedelta(days)
             date = delta
     return date
-

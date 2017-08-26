@@ -1,14 +1,15 @@
 # -*- encoding: utf-8 -*-
 
 import re
-import pytz
 from datetime import datetime
+
+import pytz
 from six import string_types
 
 from .mystrptime import mystrptime
 
 def get_timezone(timezone):
-    if timezone == None:
+    if timezone is None:
         timezone = pytz.utc # default
     elif isinstance(timezone, string_types):
         timezone = pytz.timezone(timezone)
@@ -38,7 +39,7 @@ def parse_date(date, formula=None, timezone=None, is_dst=None):
         if not formula:
             formula = guess_formula(date)
 
-        # the follwing special handling is only neccessary, because
+        # the following special handling is only neccessary, because
         # we need %z for timezone offeset
         # TODO with python3.2 this won't be neccessary !!!
 
@@ -50,11 +51,14 @@ def parse_date(date, formula=None, timezone=None, is_dst=None):
             # Python datetime needs the month and day, too.
             date = [date[0], 1, 1]
         date = datetime(*date)
-    else:
+    elif isinstance(date, datetime):
         # this is already a datetime
-        if date.tzinfo and (timezone == None):
+        if date.tzinfo and (timezone is None):
             # if it has a timezone info we take this as default instead of utc
             timezone = date.tzinfo
+    else:
+        # epoch seconds
+        date = datetime.utcfromtimestamp(date).replace(tzinfo=pytz.utc)
 
     timezone = get_timezone(timezone)
 
@@ -67,4 +71,3 @@ def parse_date(date, formula=None, timezone=None, is_dst=None):
 
     # the date was in local timezone
     return timezone.localize(date, is_dst=is_dst)
-

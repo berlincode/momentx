@@ -2,7 +2,7 @@ Python-MomentX
 ==============
 
 A lightweight wrapper around datetime with a focus on timezone handling and
-few dependencies (only pytz and six).
+few dependencies (only datetime, pytz and six).
 
 Provides a immutable date/time type that always has an attached timezone. 
 
@@ -19,7 +19,7 @@ by Zach Williams. Following the main differences:
  * removed js like date formatting options and 'times' dependency
 
 Typical usage may look like this:
-```python
+```
 
 >>> from momentx import MomentX
 >>> 
