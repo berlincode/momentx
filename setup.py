@@ -20,17 +20,15 @@ HISTORY = open('CHANGES.txt').read().replace('.. :changelog:', '')
 
 setup(
     name='momentx',
-    version='0.2.0',
-    description="""
-A lightweight wrapper around datetime with a focus on timezone handling and
-few dependencies (only pytz and six).
-""",
+    version='0.2.1',
+    description="A lightweight wrapper around datetime with a focus on timezone handling and few dependencies (datetime, pytz and six).",
     long_description=README + '\n\n' + HISTORY,
     author='Ulf Bartel',
     author_email='elastic.code@gmail.com',
     url='https://github.com/berlincode/momentx',
     packages=[
         'momentx',
+        'momentx.contrib'
     ],
     package_dir={'momentx': 'momentx'},
     include_package_data=True,
