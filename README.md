@@ -1,6 +1,11 @@
 Python-MomentX
 ==============
 
+[![Travis CI](https://travis-ci.org/berlincode/momentx.svg?branch=master&style=flat)](https://travis-ci.org/berlincode/momentx)
+[![Python versions](https://img.shields.io/pypi/pyversions/momentx.svg)](https://pypi.python.org/pypi/momentx/)
+[![new-style BSD](https://img.shields.io/pypi/l/momentx.svg)](https://github.com/berlincode/momentx/blob/master/LICENSE.txt)
+
+
 A lightweight wrapper around datetime with a focus on timezone handling and
 few dependencies (only datetime, pytz and six).
 

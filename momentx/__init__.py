@@ -4,7 +4,7 @@ MomentX
 """
 
 __author__ = "Ulf Bartel <elastic.code@gmail.com>"
-__version__ = "0.2.1"
+__version__ = "0.2.2"
 __copyright__ = "Copyright (c) Ulf Bartel / Zach Williams"
 __license__ = "New-style BSD"
 __url__ = "https://github.com/berlincode/momentx"
