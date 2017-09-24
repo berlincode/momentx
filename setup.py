@@ -20,7 +20,7 @@ HISTORY = open('CHANGES.txt').read().replace('.. :changelog:', '')
 
 setup(
     name='momentx',
-    version='0.2.2',
+    version='0.2.3',
     description="A lightweight wrapper around datetime with a focus on timezone handling and few dependencies (datetime, pytz and six).",
     long_description=README + '\n\n' + HISTORY,
     author='Ulf Bartel',

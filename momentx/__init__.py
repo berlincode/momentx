@@ -4,7 +4,7 @@ MomentX
 """
 
 __author__ = "Ulf Bartel <elastic.code@gmail.com>"
-__version__ = "0.2.2"
+__version__ = "0.2.3"
 __copyright__ = "Copyright (c) Ulf Bartel / Zach Williams"
 __license__ = "New-style BSD"
 __url__ = "https://github.com/berlincode/momentx"
@@ -91,6 +91,10 @@ class MomentX(object):
         """ change timezone """
         date = self._date.astimezone(get_timezone(timezone))
         return MomentX(date)
+
+    def asutc(self):
+        """ change timezone """
+        return self.astimezone()
 
     def isoformat(self):
         """Return the date's ISO 8601 string."""
